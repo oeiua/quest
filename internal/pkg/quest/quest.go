@@ -63,9 +63,24 @@ func Observe(maze *Maze) {
 	}
 }
 
-func Move(maze Maze) Maze {
+func MoveLeft(maze Maze) Maze {
 	newMaze := RandMaze(&maze)
 	newMaze.Hero = maze.Hero
+	fmt.Printf("You move left\n")
+	return newMaze
+}
+
+func MoveRight(maze Maze) Maze {
+	newMaze := RandMaze(&maze)
+	newMaze.Hero = maze.Hero
+	fmt.Printf("You move right\n")
+	return newMaze
+}
+
+func MoveForward(maze Maze) Maze {
+	newMaze := RandMaze(&maze)
+	newMaze.Hero = maze.Hero
+	fmt.Printf("You move forward\n")
 	return newMaze
 }
 
@@ -75,6 +90,7 @@ func MoveBack(maze Maze) Maze {
 	maze.Hero = nil
 	return *newMaze
 }
+
 func (maze *Maze) CanMove(side string) bool {
 	if side == "right" && maze.right {
 		return true
@@ -92,12 +108,15 @@ func (maze *Maze) CanMove(side string) bool {
 	return false
 }
 
-func PickupItem(maze Maze) {
+func PickupItem(maze Maze) Maze {
 	if maze.Item.item == "food" {
 		maze.Hero.health = maze.Hero.health + maze.Item.value
+		fmt.Printf("You pick up %v(%v)\n", maze.Item.item, maze.Item.value)
 	}
 	if maze.Item.item == "weapon" {
 		maze.Hero.damage = maze.Item.value
+		fmt.Printf("You pick up %v with %v damage\n", maze.Item.item, maze.Item.value)
 	}
 	maze.Item = nil
+	return maze
 }

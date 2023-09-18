@@ -24,35 +24,28 @@ func main() {
 		switch action {
 		case "left", "l":
 			if maze.CanMove("left") {
-				maze = quest.Move(maze)
-				break
+				maze = quest.MoveLeft(maze)
 			}
 		case "right", "r":
 			if maze.CanMove("right") {
-				maze = quest.Move(maze)
-				break
+				maze = quest.MoveRight(maze)
 			}
 		case "back", "b":
 			if maze.CanMove("back") {
 				maze = quest.MoveBack(maze)
-				break
 			}
 		case "forward", "f":
 			if maze.CanMove("forward") {
-				maze = quest.Move(maze)
-				break
+				maze = quest.MoveForward(maze)
 			}
 		case "pickup", "p":
 			if maze.Item != nil {
-				quest.PickupItem(maze)
+				maze = quest.PickupItem(maze)
 			}
-			break
 		case "status", "s":
 			hero.GetStats()
-			break
 		case "observe", "o":
 			quest.Observe(&maze)
-			break
 		case "suicide":
 			game = false
 		}
