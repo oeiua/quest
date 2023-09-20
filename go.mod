@@ -1,3 +1,3 @@
-module internal/pkg/quest
+module quest
 
 go 1.21.1
