@@ -1,17 +1,16 @@
 package main
 
 import (
-	"fmt"
 	"quest/hw6"
 	hw6_1 "quest/hw6/part2"
+	"quest/hw7"
 )
 
 func main() {
 
-	// hw5.TicTacToe()
-
-	//first part
 	hw6.PostOffice()
-	fmt.Println("--------------------------------")
 	hw6_1.Travel()
+
+	hw7.Channels1()
+	hw7.Channels2()
 }
