@@ -1,19 +1,17 @@
 package main
 
-import "quest/hw5"
+import (
+	"fmt"
+	"quest/hw6"
+	hw6_1 "quest/hw6/part2"
+)
 
 func main() {
 
+	// hw5.TicTacToe()
+
 	//first part
-	//hw4.Editor()
-
-	//second part
-	//hw4.StudentsGrades()
-	// k := -1
-	// for i := 0; i < 5; i++ {
-	// 	k *= -1
-	// 	fmt.Println(k)
-	// }
-	hw5.TicTacToe()
-
+	hw6.PostOffice()
+	fmt.Println("--------------------------------")
+	hw6_1.Travel()
 }
